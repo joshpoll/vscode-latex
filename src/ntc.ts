@@ -29,6 +29,7 @@ Sample Usage:
   </script>
 
 */
+// NOTE: we have adapted this library to be used in typescript
 
 // var ntc = {
 //   init: function () {
