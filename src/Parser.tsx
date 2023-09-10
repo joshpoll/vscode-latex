@@ -96,13 +96,13 @@ function Parser() {
       colorDefs += `\\definecolor{${colorDefinitions[rgb]}}{RGB}{${r},${g},${b}}\n`;
     }
 
-    const preamble = `\\\\newsavebox\\\\spacewd
-\\\\savebox\\\\spacewd{\\\\texttt{ }}
-\\\\newenvironment{code}{\\\\par\\\\catcode32=\\\\active \\\\setlength{\\\\parindent}{0pt}\\\\ttfamily}{\\\\par}
+    const preamble = `\\newsavebox\\spacewd
+\\savebox\\spacewd{\\texttt{ }}
+\\newenvironment{code}{\\par\\catcode32=\\active \\setlength{\\parindent}{0pt}\\ttfamily}{\\par}
 {
-\\\\catcode32=\\\\active %
-\\\\gdef {\\\\makebox[\\\\wd\\\\spacewd][l]{%
-\\\\phantom{\\\\textcolor{white}{\\\\fontfamily{lmtt}\\\\selectfont\\\\large\\\\smash{\\\\char32}}}}}% 
+\\catcode32=\\active %
+\\gdef {\\makebox[\\wd\\spacewd][l]{%
+\\phantom{\\textcolor{white}{\\fontfamily{lmtt}\\selectfont\\large\\smash{\\char32}}}}}% 
 }
 \\begin{code}
 `;
